@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
-const App: React.FC = () => {
+const ReactApp: React.FC = () =>{
   return (
-    <div className="App">
-      <header className="App-header">
+    <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -19,6 +19,16 @@ const App: React.FC = () => {
           Learn React
         </a>
       </header>
+  )
+}
+const App: React.FC = () => {
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" component={ReactApp}/>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
