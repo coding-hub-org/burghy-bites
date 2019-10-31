@@ -17,7 +17,7 @@ export class App {
   // ------------------------------------------------------ \\
   //              Configure express backend
   // ------------------------------------------------------ \\
-
+// my cool comment
   public ROOT_DIR: string = "./";
 
   public constructor() {}
