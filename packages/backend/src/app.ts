@@ -9,7 +9,6 @@ import { Logger } from "@michaelgatesdev/common";
 
 import indexRoute from "./routes/";
 
-import { Route } from "react-router";
 
 export const expressApp: express.Application = express();
 
