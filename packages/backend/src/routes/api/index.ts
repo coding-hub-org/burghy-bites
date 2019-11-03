@@ -1,10 +1,10 @@
 import { Router } from "express";
 
-import loginRoute from "../../routes/api/login";
-import registerRoute from "../../routes/api/register";
-import venuesRoute from "../../routes/api/venues";
-import logoutRoute from "../../routes/api/logout";
-import comments from "../../routes/api/comments";
+import loginRoute from "./login";
+import registerRoute from "./register";
+import venuesRoute from "./venues";
+import logoutRoute from "./logout";
+import comments from "./comments";
 
 const router: Router = Router();
 
