@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import logger from "morgan";
 
 import { Logger } from "@michaelgatesdev/common";
+import { FileUtils } from "@michaelgatesdev/common-io";
 
 import indexRoute from "./routes/";
 
@@ -13,13 +14,17 @@ import indexRoute from "./routes/";
 export const expressApp: express.Application = express();
 
 export class App {
+
   // ------------------------------------------------------ \\
   //              Configure express backend
   // ------------------------------------------------------ \\
-// my cool comment
-  public ROOT_DIR: string = "./";
 
-  public constructor() {}
+  public ROOT_DIR: string = "./";
+  public APPLICATION_DIR: string = `${this.ROOT_DIR}/_application`;
+  public UPLOADS_DIR: string = `${this.APPLICATION_DIR}/uploads`;
+  public DOWNLOADS_DIR: string = `${this.APPLICATION_DIR}/downloads`;
+  public CONFIGURATIONS_DIR: string = `${this.APPLICATION_DIR}/configurations`;
+  public IMAGES_DIR: string = `${this.APPLICATION_DIR}/images`;
 
   public async initialize(): Promise<void> {
     // Setup express stuff
@@ -91,7 +96,32 @@ export class App {
     });
   }
 
-  public async setupDirectories(): Promise<void> {}
+  public async setupDirectories(): Promise<void> {
+    if (!await FileUtils.checkExists(this.APPLICATION_DIR)) {
+      Logger.info("Created application directory");
+      await FileUtils.createDirectory(this.APPLICATION_DIR);
+    }
+    if (!await FileUtils.checkExists(this.UPLOADS_DIR)) {
+      Logger.info("Created application directory");
+      await FileUtils.createDirectory(this.UPLOADS_DIR);
+    }
+    if (!await FileUtils.checkExists(this.DOWNLOADS_DIR)) {
+      Logger.info("Created application directory");
+      await FileUtils.createDirectory(this.DOWNLOADS_DIR);
+    }
+    if (!await FileUtils.checkExists(this.CONFIGURATIONS_DIR)) {
+      Logger.info("Created application directory");
+      await FileUtils.createDirectory(this.CONFIGURATIONS_DIR);
+    }
+    if (!await FileUtils.checkExists(this.IMAGES_DIR)) {
+      Logger.info("Created application directory");
+      await FileUtils.createDirectory(this.IMAGES_DIR);
+    }
+  }
+
+  public async setupMongoDB(): Promise<boolean> {
+    return false;
+  }
 }
 
 export const app = new App();
