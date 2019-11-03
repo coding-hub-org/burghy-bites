@@ -28,6 +28,10 @@ const App: React.FC = () => {
         <Switch>
           <Route exact path="/" component={ReactApp} />
           <Route path="/login" />
+          <Route path="/logout" />
+          <Route path="/register" />
+          <Route path="/comments" />
+          <Route path="/venues/:id" />
         </Switch>
       </BrowserRouter>
     </div>
