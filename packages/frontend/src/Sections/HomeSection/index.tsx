@@ -1,10 +1,10 @@
 import React from 'react';
-
+import './index.scss';
 const HomeSection: React.FC = ()=>{
     return(
-        <React.Fragment>
-            This is home
-        </React.Fragment>
+        <div className="home">
+            
+        </div>
     )
 }
 
