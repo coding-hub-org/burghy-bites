@@ -1,41 +1,31 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-
-const ReactApp: React.FC = () => {
+import React from 'react';
+import './App.css';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {HomeSection,VenueSection,LoginSection,RegisterSection,DishSection} from './Sections';
+import Navbar from './Sections';
+const NotFound: React.FC= () =>{
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.tsx</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
-  );
-};
+    <React.Fragment>
+      URL not match
+    </React.Fragment>
+  )
+}
 const App: React.FC = () => {
   return (
     <div className="App">
       <BrowserRouter>
+        <Navbar/>
         <Switch>
-          <Route exact path="/" component={ReactApp} />
-          <Route path="/login" />
-          <Route path="/logout" />
-          <Route path="/register" />
-          <Route path="/comments" />
-          <Route path="/venues/:id" />
+          <Route exact path="/" component={HomeSection}/>
+          <Route path="/login" component={LoginSection}/>
+          <Route path="/register" component={RegisterSection}/>
+          <Route path="/venues" component={VenueSection}/>
+          <Route path="/dishes/:venue/:dish" component={DishSection}/>
+          <Route component={NotFound}/>
         </Switch>
       </BrowserRouter>
     </div>
   );
-};
+}
 
 export default App;
