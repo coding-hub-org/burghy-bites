@@ -11,12 +11,14 @@
   },
   "dependencies": {
     "@michaelgatesdev/common": "^1.1.2",
-    "@michaelgatesdev/common-io": "^1.0.1",
+    "@michaelgatesdev/common-io": "^1.0.2",
+    "cardboard-config": "^1.0.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
+    "mongoose": "^5.7.7",
     "morgan": "~1.9.0",
     "tslib": "^1.10.0",
     "typescript": "^3.6.3"
@@ -25,6 +27,7 @@
     "@types/cookie-parser": "^1.4.2",
     "@types/debug": "^4.1.5",
     "@types/http-errors": "^1.6.2",
+    "@types/mongoose": "^5.5.28",
     "@types/morgan": "^1.7.37",
     "@types/node": "^12.7.8",
     "ts-node": "^8.4.1",

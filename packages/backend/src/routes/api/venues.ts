@@ -1,10 +1,6 @@
 import { Router } from "express";
 
-import apiRoute from ".";
-
 const router: Router = Router();
-
-router.use("/api/routes/venues", apiRoute);
 
 router.get("/", (_req, res): void => {
   res.status(200).send("This is the venues page!");
