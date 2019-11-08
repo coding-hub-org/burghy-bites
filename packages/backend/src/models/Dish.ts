@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import { number, bool } from "prop-types";
 
-export const UsersSchema = new Schema({
+export const DishesSchema = new Schema({
   name: {
     type: String
   },
@@ -16,4 +16,4 @@ export const UsersSchema = new Schema({
   }
 });
 
-export const User = mongoose.model("user", UsersSchema);
+export const Dish = mongoose.model("user", DishesSchema);

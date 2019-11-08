@@ -1,12 +1,12 @@
 import mongoose, { Schema } from "mongoose";
 import { bool } from "prop-types";
-
+import { Dish } from "./Dish";
 export const UsersSchema = new Schema({
   name: {
     type: String
   },
   dishes: {
-    type: Array<string>()
+    type: [Dish]
   },
   hours: {
     type: TimeRanges
