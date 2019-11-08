@@ -1,9 +1,12 @@
 import React from 'react';
+import {useParams} from 'react-router-dom';
+
 
 const VenueSection: React.FC = () =>{
+    let {name}=useParams();
     return (
         <div>
-            Locations
+            <h1>{name}</h1>
         </div>
     )
 };
