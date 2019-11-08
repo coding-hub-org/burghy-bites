@@ -6,7 +6,8 @@ const DishSection:React.FC = () =>{
     let {dish,venue}=useParams();
     return(
         <div>
-            This is template page for {dish} at {venue}
+            <h1> {dish} </h1>
+            <p> from {venue}</p>
         </div>
     )
 };
