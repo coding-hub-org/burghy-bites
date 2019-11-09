@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import { Dish } from "./Dish";
-export const UsersSchema = new Schema({
+export const VenuesSchema = new Schema({
   name: {
     type: String
   },
@@ -15,4 +15,4 @@ export const UsersSchema = new Schema({
   }
 });
 
-export const User = mongoose.model("user", UsersSchema);
+export const Venue = mongoose.model("venue", VenuesSchema);
