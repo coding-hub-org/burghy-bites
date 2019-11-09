@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import "./index.scss";
-import { transform } from "@babel/core";
 
 const DishSection: React.FC = () => {
   let { dish, venue } = useParams();
@@ -36,10 +35,12 @@ const DishSection: React.FC = () => {
       <div>
         <h1>Ingredients</h1>
         <div>
+
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla
           optio fuga voluptate eius quisquam. Qui porro necessitatibus labore
           earum officiis officia, sint nemo sapiente eligendi incidunt cum odio.
           Ut?
+
         </div>
       </div>
     </div>
