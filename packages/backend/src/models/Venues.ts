@@ -1,5 +1,4 @@
 import mongoose, { Schema } from "mongoose";
-import { bool } from "prop-types";
 import { Dish } from "./Dish";
 export const UsersSchema = new Schema({
   name: {
@@ -9,10 +8,10 @@ export const UsersSchema = new Schema({
     type: [Dish]
   },
   hours: {
-    type: TimeRanges
+    type: String
   },
   isOpen: {
-    type: bool
+    type: Boolean
   }
 });
 
