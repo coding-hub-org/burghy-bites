@@ -1,13 +1,34 @@
-import React from "react";
+import React,{useState,useContext,useEffect} from "react";
 import { useParams } from "react-router-dom";
 import "./index.scss";
+import LoaderContext from "../../Context/Loader";
+import Dish from "../../Context/Models/dish";
 
 const DishSection: React.FC = () => {
   let { dish, venue } = useParams();
+  const iniDish:Dish = {
+    name:dish,
+    calories:0,
+    isHealthy:false,
+    recipe:[""]
+  }
+  
+  let loader=useContext(LoaderContext);
+  const [dishData,setDish] = useState(iniDish);
+  useEffect(()=>{
+    const getDish = async()=>{
+      let dishToGet = await loader.loadDish(dish);
+      console.log(dishToGet);
+      setDish(prev=>{
+        return dishToGet;
+      });
+    }
+    getDish();
+  },[dish,loader]);//trigger when component did mount
   return (
     <div>
       <div className="header">
-        <h1>{venue}</h1>
+        <h1>{venue} </h1>
       </div>
       <div className="grid">
         <div className="imgbox">
@@ -18,9 +39,9 @@ const DishSection: React.FC = () => {
         </div>
         <div className="textbox">
           <div className="dishName">
-            <h1>{dish}</h1>
+            <h1>{dishData.name}</h1>
           </div>
-          <h3>Calories: XXX</h3>
+          <h3>Calories: {dishData.calories}</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta est
             possimus, culpa necessitatibus excepturi, optio aut atque repellat
@@ -35,12 +56,11 @@ const DishSection: React.FC = () => {
       <div>
         <h1>Ingredients</h1>
         <div>
-
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla
-          optio fuga voluptate eius quisquam. Qui porro necessitatibus labore
-          earum officiis officia, sint nemo sapiente eligendi incidunt cum odio.
-          Ut?
-
+          {dishData.recipe.reduce(
+            (prev,cur)=>{
+              return prev+", "+cur;
+            }
+          )}
         </div>
       </div>
     </div>

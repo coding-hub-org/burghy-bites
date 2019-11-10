@@ -3,6 +3,7 @@ import express, { Response, Request } from "express";
 import createError from "http-errors";
 import path from "path";
 import cookieParser from "cookie-parser";
+
 import logger from "morgan";
 import mongoose from "mongoose";
 
@@ -11,9 +12,11 @@ import { FileUtils } from "@michaelgatesdev/common-io";
 
 import indexRoute from "./routes/";
 import { ConfigurationManager } from './configuration-manager';
+import cors from 'cors';
 
+const expressApp: express.Application = express();
 
-export const expressApp: express.Application = express();
+export {expressApp};
 
 export class App {
 
@@ -63,6 +66,8 @@ export class App {
     // view engine setup
     expressApp.set("views", path.join(__dirname, "../views"));
     expressApp.set("view engine", "ejs");
+    expressApp.use(cors());
+
 
     Logger.debug("Using dev logger");
     expressApp.use(logger("dev"));
