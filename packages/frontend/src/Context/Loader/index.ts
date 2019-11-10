@@ -7,7 +7,7 @@ class Loader{
         try{
             let response = await doGet(`/dishes/${name}`);
 
-            if (response.status===200){
+            if (response.status!==404){
                 let responseData= await response.json();
                 return responseData.data;
             }

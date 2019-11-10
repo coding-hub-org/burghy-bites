@@ -20,7 +20,7 @@ const DishSection: React.FC = () => {
       let dishToGet = await loader.loadDish(dish);
       console.log(dishToGet);
       setDish(prev=>{
-        return dishToGet;
+        return dishToGet?dishToGet:iniDish;
       });
     }
     getDish();
