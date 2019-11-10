@@ -1,10 +1,9 @@
 import mongoose, { Schema } from "mongoose";
-import { number, bool } from "prop-types";
 
-export const recipeSchema = new Schema({
+export const RecipesSchema = new Schema({
   ingredients: {
-    type: Array<string>()
+    type: [String]
   }
 });
 
-export const User = mongoose.model("user", recipeSchema);
+export const Recipe = mongoose.model("recipe", RecipesSchema);

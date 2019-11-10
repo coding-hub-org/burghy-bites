@@ -1,19 +1,22 @@
 import mongoose, { Schema } from "mongoose";
-import { number, bool } from "prop-types";
-
+import { Recipe } from './Recipe';
 export const DishesSchema = new Schema({
   name: {
-    type: String
+    type: String,
+    required: [true, "Dish's name field is required"]
   },
   price: {
-    type: number
+    type: Number
   },
   calories: {
-    type: number
+    type: Number
   },
   isHealthy: {
-    type: bool
+    type: Boolean
+  },
+  recipe:{
+    type:Recipe
   }
 });
 
-export const Dish = mongoose.model("user", DishesSchema);
+export const Dish = mongoose.model("dish", DishesSchema);
