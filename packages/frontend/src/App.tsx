@@ -19,7 +19,7 @@ const App: React.FC = () => {
           <Route exact path="/" component={HomeSection}/>
           <Route path="/login" component={LoginSection}/>
           <Route path="/register" component={RegisterSection}/>
-          <Route path="/venues" component={VenueSection}/>
+          <Route path="/venues/:name" component={VenueSection}/>
           <Route path="/dishes/:venue/:dish" component={DishSection}/>
           <Route component={NotFound}/>
         </Switch>
