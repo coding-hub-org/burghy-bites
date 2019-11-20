@@ -21,11 +21,7 @@ p{
     color: blue;
 }
 .venues-section{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-}
-.venues-section.description{
-    
+
 }
 .description{
 
@@ -40,9 +36,33 @@ p{
 .clinton{
     text-align: center;
     grid-column: 1/3;
-    color: pink;
+    color: red;
 }
 
 .subway{
-    color:green;
+    color:#008C15;
+}
+.SubwayMenu{
+    list-style-type: none;
+    margin: 20;
+    overflow: hidden;
+    background-color: #333333;
+    float: auto;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: underline;
+}
+.SubwayMenu:hover{
+    background-color: #FFC600;
+    background-color:  #008C15;
+}
+.SubwayMenuList{
+    text-align: left;
+    padding: 20px;
+}
+.SubwayMenuList:hover{
+    color: #FFC600;
+
 }
