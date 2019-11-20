@@ -14,4 +14,10 @@ div{
 }
 .logo {
     color: blue;
+    &-img{
+        position: relative;
+        max-height: 30px;
+        margin-right: 120px;
+        float: left;
+    }
 }
