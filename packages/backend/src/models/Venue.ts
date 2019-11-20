@@ -4,6 +4,7 @@ export const VenuesSchema = new Schema({
   name: {
     type: String
   },
+
   dishes: [Dish.schema],
   hours: {
     type: String
