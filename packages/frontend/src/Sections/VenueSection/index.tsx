@@ -1,7 +1,6 @@
 import React from 'react';
 import {useParams} from 'react-router-dom';
 import './index.scss';
-
 const description = (name : string|undefined)=>{
     if ( name === "clinton" )
         return (
@@ -10,27 +9,6 @@ const description = (name : string|undefined)=>{
                  <img
                 src="https://static1.squarespace.com/static/597768c003596ef82cdbd4e1/59b6aa912278e7557ed6651f/5d4db7fbfcd1ce0001bb2214/1570457176148/Plattsburgh-Salad-Bar.jpg?format=1500w" 
                 alt="Clinton"></img>
-            <div>
-            <h2 className="ClintonMenu">Menu</h2>
-            <h3> 
-                <ol className="ClintonMenuList">
-                    <li>Coffee</li>
-                        <ul>
-                            <li>black hot drink</li>
-                        </ul>
-                    <li>Tea</li>
-                        <ul>
-                            <li>Black tea</li>
-                            <li>Green tea</li>
-                        </ul>
-                    <li>Milk</li>
-                        <ul>
-                            <li>white cold drink</li>
-                        </ul>
-                    <li>Bagal</li>
-                </ol>
-            </h3>
-            </div>   
             </div>
         );
     if ( name === "subway" )
@@ -41,27 +19,6 @@ const description = (name : string|undefined)=>{
                  <img   
                 src="http://cr.citymall.net/wp-content/uploads/2014/09/logoArtboard-21-copy-344x260.png" 
                 alt="Subway"></img>
-            <div>
-            <h2 className="SubwayMenu">Menu</h2>
-            <h3> 
-                <ol className="SubwayMenuList">
-                    <li>Coffee</li>
-                        <ul>
-                            <li>black hot drink</li>
-                        </ul>
-                    <li>Tea</li>
-                        <ul>
-                            <li>Black tea</li>
-                            <li>Green tea</li>
-                        </ul>
-                    <li>Milk</li>
-                        <ul>
-                            <li>white cold drink</li>
-                        </ul>
-                    <li>Bagal</li>
-                </ol>
-            </h3>
-            </div>
             </div>
         );
     if ( name === "Little Al's" )
@@ -70,28 +27,7 @@ const description = (name : string|undefined)=>{
                 <p> The entrance to Little Al's at Algonquin is behind Adirondack Hall. Convenient, fresh and fast! Check out our delicious artisan sandwiches. Geared for customers on the run. Little Al's disposable packaging is made from degradable resources.</p> 
                  <img 
                 src="http://www.plattsburghcas.com/sites/default/files/styles/900tall/public/1Little%20Al%27s%201.jpg?itok=hqlLpr6r" 
-                alt="Little Al's"></img>
-            <div>
-            <h2 className="Menu">Menu</h2>
-            <h3> 
-                <ol className="MenuList">
-                    <li>Coffee</li>
-                        <ul>
-                            <li>black hot drink</li>
-                        </ul>
-                    <li>Tea</li>
-                        <ul>
-                            <li>Black tea</li>
-                            <li>Green tea</li>
-                        </ul>
-                    <li>Milk</li>
-                        <ul>
-                            <li>white cold drink</li>
-                        </ul>
-                    <li>Bagal</li>
-                </ol>
-            </h3>
-            </div>   
+                alt="Little Al's"></img> 
             </div>
         );
     if ( name === "Einstein's Bros. Bagels" )
@@ -101,27 +37,6 @@ const description = (name : string|undefined)=>{
                  <img 
                 src="http://www.plattsburghcas.com/sites/default/files/styles/600x400/public/Einstien_bros.jpg?itok=pBJd5tz8" 
                 alt="Einstein's"></img>
-            <div>
-            <h2 className="Menu">Menu</h2>
-            <h3> 
-                <ol className="MenuList">
-                    <li>Coffee</li>
-                        <ul>
-                            <li>black hot drink</li>
-                        </ul>
-                    <li>Tea</li>
-                        <ul>
-                            <li>Black tea</li>
-                            <li>Green tea</li>
-                        </ul>
-                    <li>Milk</li>
-                        <ul>
-                            <li>white cold drink</li>
-                        </ul>
-                    <li>Bagal</li>
-                </ol>
-            </h3>
-            </div>  
             </div>
         );
     if ( name === "Griddles" )
@@ -130,28 +45,7 @@ const description = (name : string|undefined)=>{
                 <p> Located on the first floor in the Angell College Center in Burghy’s net to Subway. Griddles is a breakfast concept with traditional breakfast eggs, egg sandwiches, pancakes, bagels, baked goods and more.</p> 
                  <img 
                 src="" 
-                alt="Griddles"></img>
-            <div>
-            <h2 className="Menu">Menu</h2>
-            <h3> 
-                <ol className="MenuList">
-                    <li>Coffee</li>
-                        <ul>
-                            <li>black hot drink</li>
-                        </ul>
-                    <li>Tea</li>
-                        <ul>
-                            <li>Black tea</li>
-                            <li>Green tea</li>
-                        </ul>
-                    <li>Milk</li>
-                        <ul>
-                            <li>white cold drink</li>
-                        </ul>
-                    <li>Bagal</li>
-                </ol>
-            </h3>
-            </div>  
+                alt="Griddles"></img>  
             </div>
         );
     if ( name === "SONO" )
@@ -161,27 +55,6 @@ const description = (name : string|undefined)=>{
                  <img 
                 src="" 
                 alt="SONO"></img>
-            <div>
-            <h2 className="Menu">Menu</h2>
-            <h3> 
-                <ol className="MenuList">
-                    <li>Coffee</li>
-                        <ul>
-                            <li>black hot drink</li>
-                        </ul>
-                    <li>Tea</li>
-                        <ul>
-                            <li>Black tea</li>
-                            <li>Green tea</li>
-                        </ul>
-                    <li>Milk</li>
-                        <ul>
-                            <li>white cold drink</li>
-                        </ul>
-                    <li>Bagal</li>
-                </ol>
-            </h3>
-            </div>   
             </div>
         );
     if ( name === "Scoops" )
@@ -191,27 +64,6 @@ const description = (name : string|undefined)=>{
                  <img 
                 src="http://www.plattsburghcas.com/sites/default/files/styles/600x400/public/Scoops_Web_Photo.jpg?itok=7c26pP6Q" 
                 alt="Scoops"></img>
-            <div>
-            <h2 className="Menu">Menu</h2>
-            <h3> 
-                <ol className="MenuList">
-                    <li>Coffee</li>
-                        <ul>
-                            <li>black hot drink</li>
-                        </ul>
-                    <li>Tea</li>
-                        <ul>
-                            <li>Black tea</li>
-                            <li>Green tea</li>
-                        </ul>
-                    <li>Milk</li>
-                        <ul>
-                            <li>white cold drink</li>
-                        </ul>
-                    <li>Bagal</li>
-                </ol>
-            </h3>
-            </div> 
             </div>
         );
     if ( name === "Tim Horton's" )
@@ -221,27 +73,6 @@ const description = (name : string|undefined)=>{
                  <img 
                 src="https://pbs.twimg.com/media/DM_tj3VXcAAB-Xk.jpg" 
                 alt="Tim Horton's"></img>
-            <div>
-            <h2 className="Menu">Menu</h2>
-            <h3> 
-                <ol className="MenuList">
-                    <li>Coffee</li>
-                        <ul>
-                            <li>black hot drink</li>
-                        </ul>
-                    <li>Tea</li>
-                        <ul>
-                            <li>Black tea</li>
-                            <li>Green tea</li>
-                        </ul>
-                    <li>Milk</li>
-                        <ul>
-                            <li>white cold drink</li>
-                        </ul>
-                    <li>Bagal</li>
-                </ol>
-            </h3>
-            </div>  
             </div>
         );
     if ( name === "Samuel D's" )
@@ -250,32 +81,12 @@ const description = (name : string|undefined)=>{
                 <p> Located in Sibley Hall at the main entrance. Samuel D's offer Starbucks coffee and delicious sandwiches, soups, salads, pastries.</p> 
                  <img 
                 src="http://samuelds.com/sDentrance2.JPG" 
-                alt="Samuel D's"></img>
-            <div>
-            <h2 className="Menu">Menu</h2>
-            <h3> 
-                <ol className="MenuList">
-                    <li>Coffee</li>
-                        <ul>
-                            <li>black hot drink</li>
-                        </ul>
-                    <li>Tea</li>
-                        <ul>
-                            <li>Black tea</li>
-                            <li>Green tea</li>
-                        </ul>
-                    <li>Milk</li>
-                        <ul>
-                            <li>white cold drink</li>
-                        </ul>
-                    <li>Bagal</li>
-                </ol>
-            </h3>
-            </div>  
+                alt="Samuel D's"></img> 
             </div>
         );
-    return null;
+    return null;    
 };
+
 const VenueSection: React.FC = () =>{
     let {name}=useParams();
     
@@ -283,6 +94,7 @@ const VenueSection: React.FC = () =>{
         <div className="venues-section">
             <h1 className={name}>{name}</h1>
             <p className="description">{description(name)}</p>
+            
         </div>
     );
 

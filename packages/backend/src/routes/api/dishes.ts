@@ -1,8 +1,4 @@
 import {Router} from 'express';
-<<<<<<< HEAD
-=======
-
->>>>>>> 825fc880417279611758af0534bb9cd8cce7f64a
 const router : Router = Router();
 
 router.get("/", (_req, res):void=>{
