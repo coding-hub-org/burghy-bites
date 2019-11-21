@@ -1,10 +1,24 @@
 import { Router } from "express";
-
+import {Venue} from '../../models/Venue';
 const router: Router = Router();
 
+
+
 router.get("/", (_req, res): void => {
-  res.status(200).send("This is the venues page!");
+  Venue.find({}, (err, venues) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    res.json(
+      {
+        confirmation:true,
+        data:venues
+      }
+    )
+  });
 });
+
 router.get("/little-al's", (_req, res): void => {
   res.status(200).send("This is little-al's");
 });

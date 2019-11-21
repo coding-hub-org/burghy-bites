@@ -36,6 +36,7 @@ const description = (name : string|undefined)=>{
     if ( name === "subway" )
         return (
             <div>
+
                 <p> Located on the first floor in the Angell College Center past the College Center desk. Fresh subs, salads and soups - eat in or take out.</p> 
                  <img   
                 src="http://cr.citymall.net/wp-content/uploads/2014/09/logoArtboard-21-copy-344x260.png" 

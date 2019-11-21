@@ -22,6 +22,12 @@ p{
 }
 .venues-section{
 
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+.venues-section.description{
+    
+
 }
 .description{
 

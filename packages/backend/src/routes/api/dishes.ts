@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import cors from 'cors';
+
 const router : Router = Router();
 
 router.get("/", (_req, res):void=>{
