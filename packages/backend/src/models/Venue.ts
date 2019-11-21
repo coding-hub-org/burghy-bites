@@ -4,9 +4,11 @@ export const VenuesSchema = new Schema({
   name: {
     type: String
   },
-  dishes: {
-    type: [Dish]
-  },
+<<<<<<< HEAD
+=======
+
+>>>>>>> a972c76818d834d9a3bddb6c4d58ca7e32a5a693
+  dishes: [Dish.schema],
   hours: {
     type: String
   },
