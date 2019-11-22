@@ -14,8 +14,8 @@ export const DishesSchema = new Schema({
   isHealthy: {
     type: Boolean
   },
-
-  recipe: [String]
+  recipe: [String],
+  venue: String
 });
 
 export const Dish = mongoose.model("dish", DishesSchema);

@@ -17,7 +17,7 @@ const DishSection: React.FC = () => {
   const [dishData, setDish] = useState(iniDish);
   useEffect(() => {
     const getDish = async () => {
-      let dishToGet = await loader.loadDish(dish);
+      let dishToGet = await loader.loadDish(dish,venue);
       console.log(dishToGet);
       setDish(prev => {
         return dishToGet ? dishToGet : iniDish;
