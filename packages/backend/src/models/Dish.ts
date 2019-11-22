@@ -15,7 +15,7 @@ export const DishesSchema = new Schema({
     type: Boolean
   },
 
-  recipe: Recipe.schema
+  recipe: [String]
 });
 
 export const Dish = mongoose.model("dish", DishesSchema);
