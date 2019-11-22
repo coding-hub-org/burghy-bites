@@ -27,3 +27,25 @@
   text-transform: capitalize;
   color: black;
 }
+
+.commentBox {
+  width: 75%;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+.submitBox {
+  width: 50%;
+  background-color: lightgreen;
+  padding: 1em;
+  border: none;
+  border-radius: 4px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  padding: 20px;
+}
