@@ -56,9 +56,9 @@ const DishSection: React.FC = () => {
       <div>
         <h1>Ingredients</h1>
         <div>
-          {dishData.recipe.reduce((prev, cur) => {
+          {dishData.recipe?(dishData.recipe.reduce((prev, cur) => {
             return prev + ", " + cur;
-          })}
+          })):null}
         </div>
       </div>
       <div>COMMENT</div>
