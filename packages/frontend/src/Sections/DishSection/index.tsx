@@ -1,4 +1,4 @@
-import React,{useState,useContext,useEffect} from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./index.scss";
 import LoaderContext from "../../Context/Loader";
@@ -6,25 +6,25 @@ import Dish from "../../Context/Models/dish";
 
 const DishSection: React.FC = () => {
   let { dish, venue } = useParams();
-  const iniDish:Dish = {
-    name:dish,
-    calories:0,
-    isHealthy:false,
-    recipe:[""]
-  }
-  
-  let loader=useContext(LoaderContext);
-  const [dishData,setDish] = useState(iniDish);
-  useEffect(()=>{
-    const getDish = async()=>{
+  const iniDish: Dish = {
+    name: dish,
+    calories: 0,
+    isHealthy: false,
+    recipe: [""]
+  };
+
+  let loader = useContext(LoaderContext);
+  const [dishData, setDish] = useState(iniDish);
+  useEffect(() => {
+    const getDish = async () => {
       let dishToGet = await loader.loadDish(dish);
       console.log(dishToGet);
-      setDish(prev=>{
-        return dishToGet?dishToGet:iniDish;
+      setDish(prev => {
+        return dishToGet ? dishToGet : iniDish;
       });
-    }
+    };
     getDish();
-  },[dish,loader]);//trigger when component did mount
+  }, [dish, loader]); //trigger when component did mount
   return (
     <div>
       <div className="header">
@@ -56,12 +56,22 @@ const DishSection: React.FC = () => {
       <div>
         <h1>Ingredients</h1>
         <div>
-          {dishData.recipe.reduce(
-            (prev,cur)=>{
-              return prev+", "+cur;
-            }
-          )}
+          {dishData.recipe.reduce((prev, cur) => {
+            return prev + ", " + cur;
+          })}
         </div>
+      </div>
+      <div>COMMENT</div>
+      <div className="wrapper">
+        <input
+          type="text"
+          name="Comment"
+          className="commentBox"
+          placeholder="Tell us! Does it taste good?"
+        />
+      </div>
+      <div className="wrapper">
+        <input type="submit" className="submitBox" />
       </div>
     </div>
   );
