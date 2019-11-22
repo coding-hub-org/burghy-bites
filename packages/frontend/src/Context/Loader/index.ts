@@ -3,9 +3,9 @@ import {doGet} from './HTTPRequest';
 class Loader{
     constructor(){
     }
-    async loadDish(name:string|undefined){
+    async loadDish(name:string|undefined, venue:string|undefined){
         try{
-            let response = await doGet(`/dishes/${name}`);
+            let response = await doGet(`/dishes/${venue}/${name}`);
 
             if (response.status!==404){
                 let responseData= await response.json();

@@ -4,8 +4,8 @@ import {Dish} from '../../models/Dish';
 router.get("/", (_req, res):void=>{
     res.status(200).send("This is main dishes");
 });
-router.get("/:param",(_req, res):void=>{
-    Dish.findOne({name: _req.params.param}, (err,dish)=>{
+router.get("/:venue/:dish",(_req, res):void=>{
+    Dish.findOne({name: _req.params.dish,venue: _req.params.venue}, (err,dish)=>{
         if (err){
             console.log(err);
             return;
