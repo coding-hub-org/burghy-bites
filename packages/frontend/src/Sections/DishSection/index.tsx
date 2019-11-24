@@ -45,7 +45,7 @@ const DishSection: React.FC = () => {
   return (
     <div>
       <div className="header">
-        <h1>{venue} </h1>
+        <h1 className="blockBlack">{venue} </h1>
       </div>
       <div className="grid">
         <div className="imgbox">
@@ -70,32 +70,37 @@ const DishSection: React.FC = () => {
           </p>
         </div>
       </div>
-      <div>
+      <div className="blockYellow">
         <h1>Ingredients</h1>
         <div>
-          {dishData.recipe?(dishData.recipe.reduce((prev, cur) => {
-            return prev + ", " + cur;
-          })):null}
+          {dishData.recipe
+            ? dishData.recipe.reduce((prev, cur) => {
+                return prev + ", " + cur;
+              })
+            : null}
         </div>
       </div>
-      <div>COMMENT</div>
-      <div className="wrapper">
-        <input
-          type="text"
-          name="Comment"
-          className="commentBox"
-          placeholder="Tell us! Does it taste good?"
-        />
-      </div>
-      <div className="wrapper">
-        <button type="submit" className="submitBox" >Submit</button>
-      </div>
-      <div>
-        {comments.map(review =>{
-          return commentBox(review);
-        })}
-      </div>
+      <div className="blockYellow">
+        <div className="wrapper">
+          <h4 className="header">comment</h4>
+          <input
+            type="text"
+            name="Comment"
+            className="commentBox"
+            placeholder="Tell us! Does it taste good?"
+          />
+        </div>
+        <div className="wrapper">
+          <button type="submit" className="submitBox" >Submit</button>
+        </div>
+        <div>
+          {comments.map(review =>{
+            return commentBox(review);
+          })}
+        </div>
+        </div>
     </div>
+
   );
 };
 export default DishSection;
