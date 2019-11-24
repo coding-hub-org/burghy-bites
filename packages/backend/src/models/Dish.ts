@@ -21,6 +21,7 @@ export const DishesSchema = new Schema({
   imgUrl: {
     type:String
   }
+
 });
 
 export const Dish = mongoose.model("dish", DishesSchema);

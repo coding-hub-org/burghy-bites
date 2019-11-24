@@ -35,9 +35,11 @@ const DishSection: React.FC = () => {
       setDish(prev => {
         return dishToGet ? dishToGet : iniDish;
       });
+
       setComments(prev=>{
         return commentToGet? commentToGet : prev
       });
+
     };
     if (!isLoading) return;
     getDish();
