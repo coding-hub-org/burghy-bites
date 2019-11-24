@@ -5,7 +5,7 @@ const LoginSection:React.FC = () =>{
         <div>
             <h1 className="login-header">LOGIN</h1>
             <div>                                        
-                <h2>Welcome back! Did you </h2><a href="/">forget your password?</a>
+                <h2>Welcome back!  </h2><a href="/">Did you forget your password?</a>
             </div>
             <div>
                 <input type="text"  placeholder="Username"/>

@@ -7,6 +7,7 @@ const Navbar: React.FC = ()=>{
     return(
         <div>
             <NavLink to="/">Home</NavLink>
+            <NavLink to="/login"> Login</NavLink>
             <span id="logo"><img src={BBlogo} className="logo-img" alt="logo"/></span>
         </div>
     )
