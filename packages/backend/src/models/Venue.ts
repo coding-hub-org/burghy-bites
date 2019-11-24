@@ -8,6 +8,12 @@ export const VenuesSchema = new Schema({
   },
   isOpen: {
     type: Boolean
+  },
+  description:{
+    type: String
+  },
+  imgURL:{
+    type: String
   }
 });
 
