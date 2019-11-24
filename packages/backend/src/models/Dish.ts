@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { Recipe } from './Recipe';
+
 export const DishesSchema = new Schema({
   name: {
     type: String,
@@ -14,8 +14,13 @@ export const DishesSchema = new Schema({
   isHealthy: {
     type: Boolean
   },
-
-  recipe: Recipe.schema
+  recipe: [String],
+  venue: {
+    type:String
+  },
+  imgUrl: {
+    type:String
+  }
 });
 
 export const Dish = mongoose.model("dish", DishesSchema);
