@@ -12,6 +12,9 @@ export const UsersSchema = new Schema({
   email: {
     type: String,
     required: [true, "Email is required!"]
+  },
+  hashedPass:{
+    type: String,
   }
   // imageUrl: {
   //     type: String,
