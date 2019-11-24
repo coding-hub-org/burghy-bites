@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.scss';
 import {NavLink} from 'react-router-dom';
-import BBlogo from "../../Asset/BBlogo.png";
+import BBlogo from "../../Asset/NewLogoName.png";
 //this need to be redesigned
 const Navbar: React.FC = ()=>{
     return(
