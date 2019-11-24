@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { Recipe } from './Recipe';
+
 export const DishesSchema = new Schema({
   name: {
     type: String,

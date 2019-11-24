@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import "./index.scss";
 import LoaderContext from "../../Context/Loader";
 import Dish from "../../Context/Models/dish";
+import Review from "../../Context/Models/review";
 
 const DishSection: React.FC = () => {
   let { dish, venue } = useParams();
@@ -10,21 +11,33 @@ const DishSection: React.FC = () => {
     name: dish,
     calories: 0,
     isHealthy: false,
-    recipe: [""]
+    recipe: [""],
+    imgURL:""
   };
-
+  const commentBox = (review : Review)=>{
+    return(
+      <div>
+        <h4>{review.author+"   >> STAR:  "}  <span>{review.score}</span></h4>
+        {review.content}
+      </div>
+    )
+  }
   let loader = useContext(LoaderContext);
   const [dishData, setDish] = useState(iniDish);
   const [isLoading, loaded] = useState(true);
+  const [comments, setComments]=useState([]);
   useEffect(() => {
     const getDish = async () => {
       let dishToGet = await loader.loadDish(dish,venue);
+      let commentToGet = await loader.loadComments(dish,venue);
       console.log(dishToGet);
       loaded(false);
       setDish(prev => {
         return dishToGet ? dishToGet : iniDish;
       });
-      
+      setComments(prev=>{
+        return commentToGet? commentToGet : prev
+      });
     };
     if (!isLoading) return;
     getDish();
@@ -75,7 +88,12 @@ const DishSection: React.FC = () => {
         />
       </div>
       <div className="wrapper">
-        <input type="submit" className="submitBox" />
+        <button type="submit" className="submitBox" >Submit</button>
+      </div>
+      <div>
+        {comments.map(review =>{
+          return commentBox(review);
+        })}
       </div>
     </div>
   );

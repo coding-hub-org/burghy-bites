@@ -54,6 +54,19 @@ class Loader{
 
         }
     };
+    async loadComments(dish: string|undefined, venue: string|undefined){
+        try{
+            let response = await doGet(`/comments/${venue}/${dish}`);
+            if (response.status!==404){
+                let responseData= await response.json();
+                return responseData.data;
+            }
+        }catch(error){
+            console.error(error);
+        }finally{
+            
+        }
+    }
 };
 const LoaderContext= React.createContext(new Loader());
 export default LoaderContext;
