@@ -15,16 +15,20 @@ const DishSection: React.FC = () => {
 
   let loader = useContext(LoaderContext);
   const [dishData, setDish] = useState(iniDish);
+  const [isLoading, loaded] = useState(true);
   useEffect(() => {
     const getDish = async () => {
       let dishToGet = await loader.loadDish(dish,venue);
       console.log(dishToGet);
+      loaded(false);
       setDish(prev => {
         return dishToGet ? dishToGet : iniDish;
       });
+      
     };
+    if (!isLoading) return;
     getDish();
-  }, [dish, loader]); //trigger when component did mount
+  }, [isLoading, dish, loader,venue,iniDish]); //trigger when component did mount
   return (
     <div>
       <div className="header">
