@@ -10,7 +10,8 @@ const DishSection: React.FC = () => {
     name: dish,
     calories: 0,
     isHealthy: false,
-    recipe: [""]
+    recipe: [""],
+    imgURL: ""
   };
 
   let loader = useContext(LoaderContext);
@@ -18,21 +19,20 @@ const DishSection: React.FC = () => {
   const [isLoading, loaded] = useState(true);
   useEffect(() => {
     const getDish = async () => {
-      let dishToGet = await loader.loadDish(dish,venue);
+      let dishToGet = await loader.loadDish(dish, venue);
       console.log(dishToGet);
       loaded(false);
       setDish(prev => {
         return dishToGet ? dishToGet : iniDish;
       });
-      
     };
     if (!isLoading) return;
     getDish();
-  }, [isLoading, dish, loader,venue,iniDish]); //trigger when component did mount
+  }, [isLoading, dish, loader, venue, iniDish]); //trigger when component did mount
   return (
     <div>
       <div className="header">
-        <h1>{venue} </h1>
+        <h1 className="blockBlack">{venue} </h1>
       </div>
       <div className="grid">
         <div className="imgbox">
@@ -57,25 +57,29 @@ const DishSection: React.FC = () => {
           </p>
         </div>
       </div>
-      <div>
+      <div className="blockYellow">
         <h1>Ingredients</h1>
         <div>
-          {dishData.recipe?(dishData.recipe.reduce((prev, cur) => {
-            return prev + ", " + cur;
-          })):null}
+          {dishData.recipe
+            ? dishData.recipe.reduce((prev, cur) => {
+                return prev + ", " + cur;
+              })
+            : null}
         </div>
       </div>
-      <div>COMMENT</div>
-      <div className="wrapper">
-        <input
-          type="text"
-          name="Comment"
-          className="commentBox"
-          placeholder="Tell us! Does it taste good?"
-        />
-      </div>
-      <div className="wrapper">
-        <input type="submit" className="submitBox" />
+      <div className="blockYellow">
+        <div className="wrapper">
+          <h4 className="header">comment</h4>
+          <input
+            type="text"
+            name="Comment"
+            className="commentBox"
+            placeholder="Tell us! Does it taste good?"
+          />
+        </div>
+        <div className="wrapper">
+          <input type="submit" className="submitBox" />
+        </div>
       </div>
     </div>
   );
