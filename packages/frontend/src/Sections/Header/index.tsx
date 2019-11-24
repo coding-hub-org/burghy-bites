@@ -5,12 +5,10 @@ import BBlogo from "../../Asset/BBlogo.png";
 //this need to be redesigned
 const Navbar: React.FC = ()=>{
     return(
-        <React.Fragment>
+        <div>
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/venues">Dining Locations </NavLink>
-            <input type="text" placeholder="Search..." />
             <span id="logo"><img src={BBlogo} className="logo-img" alt="logo"/></span>
-        </React.Fragment>
+        </div>
     )
 };
 export default Navbar;
