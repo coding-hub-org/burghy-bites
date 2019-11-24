@@ -15,12 +15,16 @@ export const DishesSchema = new Schema({
     type: Boolean
   },
   recipe: [String],
+<<<<<<< HEAD
   venue: {
     type:String
   },
   imgUrl: {
     type:String
   }
+=======
+  venue: String
+>>>>>>> e3a98a481b8d2fa2958afbfdbc709ac9fdd9707c
 });
 
 export const Dish = mongoose.model("dish", DishesSchema);
