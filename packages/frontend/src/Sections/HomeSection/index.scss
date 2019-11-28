@@ -1,0 +1,66 @@
+.home{
+    background-image: url("../../Asset/breakfast.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+
+h1 {
+  font-style: italic;
+  background-color: inherit;
+  color: #ffffff;
+  text-align: center;
+}
+
+
+.places {
+  background-color: white;
+  max-width: 80%;
+  margin-left: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.box {
+  background-color: black;
+  color:inherit;
+  display: inline-block;
+  width: 30%;
+  max-width: 400px;
+  min-width: 250px;
+  height: 300px;
+  padding-top: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border:2px;
+  border-radius: 20px;
+}
+
+#subway{
+  background-size: 200%;
+}
+
+diva:hover {
+  background-color: yellow;
+  color:inherit;
+}
+
+footer {
+  background-color: black;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: white;
+}
+
+#boxlet {
+  height: 500px;
+  background-color: black;
+  color:inherit;
+  margin: 25px;
+  margin-left: 10%;
+  width: 80%;
+
+}

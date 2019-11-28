@@ -1,0 +1,23 @@
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 15pt;
+    margin:0 30px;
+}
+
+a:hover {
+    color: grey;
+}
+
+div{
+    color:red;
+}
+.logo {
+    color: blue;
+    &-img{
+        position: relative;
+        max-height: 30px;
+        margin-right: 120px;
+        float: left;
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "extends": "./tsconfig.base.json",
+    "paths": {
+        "@burghy-bites/*": [
+            "packages/*/src"
+        ]
+    },
+    "exclude": [
+        "scripts"
+    ]
+}

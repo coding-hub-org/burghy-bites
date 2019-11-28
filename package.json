@@ -1,0 +1,16 @@
+{
+  "name": "burghy-bites",
+  "version": "1.0.0",
+  "description": "A web application to submit feedback about food at the SUNY Plattsburgh campus.",
+  "repository": "git@github.com:coding-hub-org/burghy-bites.git",
+  "author": "CodingHub",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start:backend": "cd packages/backend && yarn start",
+    "start:frontend": "cd packages/frontend && yarn start"
+  }
+}
