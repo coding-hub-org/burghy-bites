@@ -3,6 +3,7 @@ import './index.scss';
 import LoaderContext from '../../Context/Loader';
 import Venue from '../../Context/Models/venue';
 import { useCallback } from 'react';
+import MapComponent from './map';
 const VenueBox = (venue:Venue) =>{
     return(
         <div>
@@ -33,6 +34,9 @@ const HomeSection: React.FC = ()=>{
     },[loader,isLoading]);
     return(
         <div className="home">
+            <div className="map-wrapper">
+                <MapComponent/>
+            </div>
             <div className="venues-wrapper">
                 {listOfVenues.map(venue=>{
                     return VenueBox(venue);

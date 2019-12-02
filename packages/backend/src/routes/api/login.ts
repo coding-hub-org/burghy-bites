@@ -5,4 +5,8 @@ router.get("/", (_req, res): void => {
   res.status(200).send("This is the login page!");
 });
 
+router.patch("/", (_req, res): void =>{
+
+});
+
 export default router;
