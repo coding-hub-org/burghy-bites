@@ -1,12 +1,11 @@
-.home{
-    background-image: url("../../Asset/breakfast.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    min-height: 100vh;
-    min-width: 100vw;
+.home {
+  background-image: url("../../Asset/breakfast.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
 }
-
 
 h1 {
   font-style: italic;
@@ -14,7 +13,6 @@ h1 {
   color: #ffffff;
   text-align: center;
 }
-
 
 .places {
   background-color: white;
@@ -26,7 +24,7 @@ h1 {
 
 .box {
   background-color: black;
-  color:inherit;
+  color: inherit;
   display: inline-block;
   width: 30%;
   max-width: 400px;
@@ -35,17 +33,17 @@ h1 {
   padding-top: 10px;
   margin-top: 10px;
   margin-bottom: 5px;
-  border:2px;
+  border: 2px;
   border-radius: 20px;
 }
 
-#subway{
+#subway {
   background-size: 200%;
 }
 
 diva:hover {
   background-color: yellow;
-  color:inherit;
+  color: inherit;
 }
 
 footer {
@@ -58,9 +56,8 @@ footer {
 #boxlet {
   height: 500px;
   background-color: black;
-  color:inherit;
+  color: inherit;
   margin: 25px;
   margin-left: 10%;
   width: 80%;
-
 }
