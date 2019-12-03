@@ -2,7 +2,6 @@ import React,{useState,useContext,useEffect} from 'react';
 import './index.scss';
 import LoaderContext from '../../Context/Loader';
 import Venue from '../../Context/Models/venue';
-import { useCallback } from 'react';
 import MapComponent from './map';
 const VenueBox = (venue:Venue) =>{
     return(

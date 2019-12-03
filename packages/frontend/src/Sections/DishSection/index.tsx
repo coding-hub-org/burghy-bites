@@ -4,6 +4,7 @@ import "./index.scss";
 import LoaderContext from "../../Context/Loader";
 import Dish from "../../Context/Models/dish";
 import Review from "../../Context/Models/review";
+import authenticationContext from '../../Context/Authenticator';
 
 const DishSection: React.FC = () => {
   let { dish, venue } = useParams();
@@ -23,9 +24,29 @@ const DishSection: React.FC = () => {
     )
   }
   let loader = useContext(LoaderContext);
+  let authenticator = useContext(authenticationContext);
+  const [comment, setComment] =useState("");
+  const [status,setStatus]= useState(false);
   const [dishData, setDish] = useState(iniDish);
   const [isLoading, loaded] = useState(true);
   const [comments, setComments]=useState([]);
+  const handleClick = async()=>{
+    let response = await authenticator.doComment({
+        author : "me",
+        score : 5,
+        forDish: dish,
+        forVenue: venue,
+        content: comment
+    });
+  }
+  useEffect(()=>{
+    const check = async()=>{
+      let response = await authenticator.doCheck();
+      if (response)
+        setStatus(response);
+    };
+    check();
+  },[authenticator])
   useEffect(() => {
     const getDish = async () => {
       let dishToGet = await loader.loadDish(dish,venue);
@@ -81,18 +102,27 @@ const DishSection: React.FC = () => {
         </div>
       </div>
       <div className="blockYellow">
+        {(status)?
+        <>
         <div className="wrapper">
           <h4 className="header">comment</h4>
           <input
+            onChange={
+              (e)=>{
+                setComment(e.target.value);
+              }
+            }
             type="text"
             name="Comment"
             className="commentBox"
             placeholder="Tell us! Does it taste good?"
+            value={comment}
           />
         </div>
         <div className="wrapper">
-          <button type="submit" className="submitBox" >Submit</button>
+          <button onClick={handleClick} className="submitBox" >Submit</button>
         </div>
+        </>:null}
         <div>
           {comments.map(review =>{
             return commentBox(review);
