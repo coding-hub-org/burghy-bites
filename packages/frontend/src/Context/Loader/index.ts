@@ -1,5 +1,5 @@
 import React from 'react';
-import {doGet} from './HTTPRequest';
+import {doGet} from '../HTTPRequest';
 
 class Loader{
     async loadDish(name:string|undefined, venue:string|undefined){
