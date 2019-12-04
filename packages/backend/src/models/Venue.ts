@@ -1,17 +1,19 @@
 import mongoose, { Schema } from "mongoose";
-import { Dish } from "./Dish";
 export const VenuesSchema = new Schema({
   name: {
     type: String
-  },
-  dishes: {
-    type: [Dish]
   },
   hours: {
     type: String
   },
   isOpen: {
     type: Boolean
+  },
+  description:{
+    type: String
+  },
+  imgURL:{
+    type: String
   }
 });
 

@@ -1,11 +1,10 @@
 import React from 'react';
-import {doGet} from './HTTPRequest';
+import {doGet} from '../HTTPRequest';
+
 class Loader{
-    constructor(){
-    }
-    async loadDish(name:string|undefined){
+    async loadDish(name:string|undefined, venue:string|undefined){
         try{
-            let response = await doGet(`/dishes/${name}`);
+            let response = await doGet(`/dishes/${venue}/${name}`);
 
             if (response.status!==404){
                 let responseData= await response.json();
@@ -16,8 +15,58 @@ class Loader{
         }finally{
             
         }
-
     };
+    async loadAllDish(venue:string|undefined){
+        try{
+            let response = await doGet(`/dishes/${venue}`);
+            if (response.status!==404){
+                let responseData= await response.json();
+                return responseData.data;
+            }
+        }catch(error){
+            console.error(error);
+        }finally{
+
+        }
+    };
+    async loadVenues(){
+        try{
+            let response = await doGet('/venues');
+            if (response.status!==404){
+                let responseData= await response.json();
+                return responseData.data;
+            }
+        }catch(error){
+            console.error(error);
+        }finally{
+        }
+    };
+    async loadVenue(name: string| undefined){
+        try{
+            let response = await doGet(`/venues/${name}`);
+            if (response.status!==404){
+                let responseData= await response.json();
+                return responseData.data;
+            }
+        }catch(error){
+            console.error(error);
+        }finally{
+
+        }
+    };
+    async loadComments(dish: string|undefined, venue: string|undefined){
+        try{
+            let response = await doGet(`/comments/${venue}/${dish}`);
+            if (response.status!==404){
+                let responseData= await response.json();
+                return responseData.data;
+            }
+        }catch(error){
+            console.error(error);
+        }finally{
+            
+        }
+    }
 };
 const LoaderContext= React.createContext(new Loader());
 export default LoaderContext;

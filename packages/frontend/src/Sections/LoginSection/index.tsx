@@ -1,22 +1,48 @@
-import React from 'react';
+import React,{useState, useContext} from 'react';
 import './index.scss';
+import {Redirect} from 'react-router-dom';
+import authenticationContext from '../../Context/Authenticator';
+
 const LoginSection:React.FC = () =>{
+    let authenticator = useContext(authenticationContext);
+    const [loggedIn,log] = useState(false);
+    const [email,setEmail] = useState("");
+    const [password,setPassWord] = useState("");
+    const handleChangeUser = (e: React.FormEvent<HTMLInputElement>) =>{
+        setEmail(e.currentTarget.value);
+    };
+    const handleChangePass = (e: React.FormEvent<HTMLInputElement>) =>{
+        setPassWord(e.currentTarget.value);
+    }
+    const handleClick= async()=>{
+        console.log(email);
+        console.log(password);
+        let response=await authenticator.doLogin({
+            email:email,
+            password:password
+        });
+        if (response) log(true);
+    };
+    if (loggedIn)
     return(
-<body className = "bg-img">
+        <Redirect to="/"/>
+    )
+    return(
+<div className = "bg-img">
     <form action = "/action_page.php" method="post">
         <div className="login-box">
             <h1 className="txt-color">Login</h1>
             <br></br>
             <div className="input_container">
-                <input placeholder="Username" type="text" name="Username" className='input-field'/>
+                <input onChange={handleChangeUser} placeholder="Username" type="text" name="Username" className='input-field' value={email} />
             </div>
             <br></br>
             <div className="input_container">
-                <input placeholder="Password" type="password" name="Password" className='input-field'/>
+                <input onChange={handleChangePass} placeholder="Password" type="password" name="Password" className='input-field' value={password}/>
             </div>
             <br></br>
             <div>
-                <button type="submit" value="Login" id='input_submit' className="input_submit">Login</button>
+                <button onClick={(e)=>{handleClick();}} id='input_submit' className="input_submit">Login</button>
             </div>
             <br></br>
             <div>
@@ -26,7 +52,7 @@ const LoginSection:React.FC = () =>{
 
 
     </form>
-</body>
+</div>
     )
 };
 
