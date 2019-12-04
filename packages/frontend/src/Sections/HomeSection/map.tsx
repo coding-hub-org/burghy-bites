@@ -1,10 +1,12 @@
 import React,{useEffect,useState} from 'react';
 import 'ol/ol.css';
-import {Map, View} from 'ol';
+import {Map, View, Feature} from 'ol';
+import Point from 'ol/geom/Point';
 import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
 import {fromLonLat} from 'ol/proj';
 import './map.scss';
+import Layer from 'ol/layer/Layer';
 const SUNYPLonLat = [-73.4669, 44.6926];
 const SUNYPWebMercator = fromLonLat(SUNYPLonLat);
 const MapComponent:React.FC = ()=>{
@@ -34,8 +36,10 @@ const MapComponent:React.FC = ()=>{
     },[]);
     useEffect(()=>{
         if (!map) return;
-        console.log(map.getView());
-        
+        let marker = new Feature({
+            type: 'geoMarker',
+            geometry: new Point(SUNYPWebMercator)
+        });
     },[map]);
     return (
         <div>

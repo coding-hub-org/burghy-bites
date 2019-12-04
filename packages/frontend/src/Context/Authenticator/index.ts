@@ -16,7 +16,7 @@ class Auth{
     };
     async doSignUp(data:Object|undefined){
         try{
-            let response = await doPatch('/register',data,{"Authorization":` Token ${this.token.get('token')}`});
+            let response = await doPost('/register',data);
             if (response.status!==404){
                 return true;
             }
@@ -32,7 +32,7 @@ class Auth{
     async doLogin(data: Object|undefined){
         //doPatch
         try{
-            let response = await doPatch('/login',data,{"Authorization":` Token ${this.token.get('token')}`});
+            let response = await doPatch('/login',data);
             if (response.status!==404){
                 return true;
             }
@@ -57,9 +57,21 @@ class Auth{
             console.log(error);
             return false;
         }finally{
+        }
+    }
+    async doComment(data: Object|undefined){
+        try{
+            let response = await doPost('/comments',data,{"Authorization":` Token ${this.token.get('token')}`});
+            if (response.status!==404){
+                return true;
+            }
+            return false;
+        }catch(error){
+            console.log(error);
+            return false;
+        }finally{
 
         }
-
     }
     async doCheck(){
         try{
