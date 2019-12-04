@@ -26,14 +26,14 @@ const Navbar: React.FC = ()=>{
     },[authenticator]);
 
     return(
-        <div>
-            <NavLink to="/">Home</NavLink>
+        <div className="navbar">
+            <NavLink to="/" >Home</NavLink>
             {(status)?<Logout/>:<>
             <NavLink to="/login"> Login</NavLink>
             <NavLink to="/register"> Sign Up</NavLink>
             </>
             }
-            <span id="logo"><img src={BBlogo} className="logo-img" alt="logo"/></span>
+            <span id="logo" ><img src={BBlogo} className="logo-img" alt="logo" /></span>
         </div>
     )
 };

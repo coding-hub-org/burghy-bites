@@ -1,9 +1,14 @@
 .home{
-    background-color: black;
+    background-color: #162315;
     color: white;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
     min-height: 100vh;
     min-width: 100vw;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    position: static;
+    top: 0;
 }

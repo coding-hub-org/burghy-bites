@@ -1,11 +1,18 @@
-a {
-    text-decoration: none;
-    color: black;
-    font-size: 15pt;
-    margin:0 30px;
+.navbar {
+  background-color: black;
+  height: 60px;
 }
 
-a:hover {
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 15pt;
+    margin:0 30px;
+    padding-top: 10px;
+    float: right;
+}
+
+.navbar a:hover {
     color: grey;
 }
 
@@ -16,8 +23,9 @@ div{
     color: blue;
     &-img{
         position: relative;
-        max-height: 30px;
+        max-height: 40px;
         margin-right: 120px;
+        padding: 10px;
         float: left;
     }
 }
