@@ -2,6 +2,7 @@ import React,{useState, useContext} from 'react';
 import './index.scss';
 import {Redirect} from 'react-router-dom';
 import authenticationContext from '../../Context/Authenticator';
+
 const LoginSection:React.FC = () =>{
     let authenticator = useContext(authenticationContext);
     const [loggedIn,log] = useState(false);
@@ -27,29 +28,31 @@ const LoginSection:React.FC = () =>{
         <Redirect to="/"/>
     )
     return(
-        <div>
-            <h1 className="login-header">LOGIN</h1>
-            <div>                                        
-                <h2>Welcome back!  </h2><a href="/">Did you forget your password?</a>
+<div className = "bg-img">
+    <form action = "/action_page.php" method="post">
+        <div className="login-box">
+            <h1 className="txt-color">Login</h1>
+            <br></br>
+            <div className="input_container">
+                <input onChange={handleChangeUser} placeholder="Username" type="text" name="Username" className='input-field' value={email} />
             </div>
+            <br></br>
+            <div className="input_container">
+                <input onChange={handleChangePass} placeholder="Password" type="password" name="Password" className='input-field' value={password}/>
+            </div>
+            <br></br>
             <div>
-                <label>Email</label><br/>
-                <input onChange={handleChangeUser} type="text"  id="username" placeholder="Username" value={email}/>
+                <button onClick={(e)=>{handleClick();}} id='input_submit' className="input_submit">Login</button>
             </div>
+            <br></br>
             <div>
-                <label>Password</label><br/>
-                <input onChange={handleChangePass} type="password" id="password" placeholder="Password" value={password}/>
-            </div>
-            
-        
-            <div >
-                <input type="checkbox" />
-                <label >Remember me</label>
-            </div>
-        
-
-            <button onClick={(e)=>{handleClick();}}>Login</button>
+            <span className="txt-color">Forgot <a className="links" href="#"> Username / Password ?</a></span> 
+            </div>  
         </div>
+
+
+    </form>
+</div>
     )
 };
 
