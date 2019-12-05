@@ -73,6 +73,27 @@
   background: #ffd26f;
   border-radius: 20px;
   grid-gap: 5px;
-  color: black;
+  color: whitesmoke;
   margin: 20px;
+}
+
+.blockGreen {
+  display: block;
+  background: #b7d885;
+  border-radius: 20px;
+  grid-gap: 5px;
+  color: whitesmoke;
+  margin: 5px;
+}
+
+.reviewSec {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+  img {
+    height: 10%;
+    width: 10%;
+  }
+  justify-items: start;
 }

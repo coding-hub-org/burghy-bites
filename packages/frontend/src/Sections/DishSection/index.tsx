@@ -97,11 +97,25 @@ const DishSection: React.FC = () => {
             Submit
           </button>
         </div>
+      </div>
+      <div className="blockYellow">
+        <h3>what other people said:</h3>
+      </div>
+      <div className="reviewSec">
         <div>
-          {comments.map(review => {
-            return commentBox(review);
-          })}
+          <img
+            src="https://www.trzcacak.rs/myfile/detail/508-5082157_black-circle-png-shadow-default-profile-picture-round.png"
+            alt=""
+          />
         </div>
+        <div className="blockGreen">
+          <h4>
+            This was so good, must try! Hopefully they make more of this!!!!!!!!
+          </h4>
+        </div>
+        {comments.map(review => {
+          return commentBox(review);
+        })}
       </div>
     </div>
   );
