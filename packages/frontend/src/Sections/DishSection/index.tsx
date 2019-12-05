@@ -4,6 +4,7 @@ import "./index.scss";
 import LoaderContext from "../../Context/Loader";
 import Dish from "../../Context/Models/dish";
 import Review from "../../Context/Models/review";
+import authenticationContext from '../../Context/Authenticator';
 
 const DishSection: React.FC = () => {
   let { dish, venue } = useParams();
@@ -25,9 +26,29 @@ const DishSection: React.FC = () => {
     );
   };
   let loader = useContext(LoaderContext);
+  let authenticator = useContext(authenticationContext);
+  const [comment, setComment] =useState("");
+  const [status,setStatus]= useState(false);
   const [dishData, setDish] = useState(iniDish);
   const [isLoading, loaded] = useState(true);
-  const [comments, setComments] = useState([]);
+  const [comments, setComments]=useState([]);
+  const handleClick = async()=>{
+    let response = await authenticator.doComment({
+        author : "me",
+        score : 5,
+        forDish: dish,
+        forVenue: venue,
+        content: comment
+    });
+  }
+  useEffect(()=>{
+    const check = async()=>{
+      let response = await authenticator.doCheck();
+      if (response)
+        setStatus(response);
+    };
+    check();
+  },[authenticator])
   useEffect(() => {
     const getDish = async () => {
       let dishToGet = await loader.loadDish(dish, venue);
@@ -39,6 +60,7 @@ const DishSection: React.FC = () => {
       });
       setComments(prev => {
         return commentToGet ? commentToGet : prev;
+
       });
     };
     if (!isLoading) return;
@@ -83,41 +105,37 @@ const DishSection: React.FC = () => {
         </div>
       </div>
       <div className="blockYellow">
+        {(status)?
+        <>
         <div className="wrapper">
           <h4 className="header">comment</h4>
           <input
+            onChange={
+              (e)=>{
+                setComment(e.target.value);
+              }
+            }
             type="text"
             name="Comment"
             className="commentBox"
             placeholder="Tell us! Does it taste good?"
+
+            value={comment}
           />
         </div>
         <div className="wrapper">
-          <button type="submit" className="submitBox">
-            Submit
-          </button>
+          <button onClick={handleClick} className="submitBox" >Submit</button>
         </div>
-      </div>
-      <div className="blockYellow">
-        <h3>what other people said:</h3>
-      </div>
-      <div className="reviewSec">
+        </>:null}
         <div>
-          <img
-            src="https://www.trzcacak.rs/myfile/detail/508-5082157_black-circle-png-shadow-default-profile-picture-round.png"
-            alt=""
-          />
+          {comments.map(review =>{
+            return commentBox(review);
+          })}
         </div>
-        <div className="blockGreen">
-          <h4>
-            This was so good, must try! Hopefully they make more of this!!!!!!!!
-          </h4>
         </div>
-        {comments.map(review => {
-          return commentBox(review);
-        })}
-      </div>
+
     </div>
+
   );
 };
 export default DishSection;

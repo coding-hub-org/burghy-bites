@@ -1,17 +1,100 @@
-form{
-    border: 3px solid white;
+
+:root {
+    --form_bg: white;
+    --input_bg: #E5E5E5;
+    --input_hover: #eaeaea;
+    --submit_bg: #1FCC44;
+    --submit_hover: #40e263;
+    --icon_color: #6b6b6b;
+    --default_color: black;
 }
 
-input{
-    padding: 12px 20px;
-    margin:8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
+.bg-img{
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
-} 
-.login-header{
-    color:white;
 }
+
+.bg-{
+    height: 100vh;
+}
+
+.bg-img{
+    background: url(../../Asset/breakfast.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+.login-box{
+    background-color:white;
+    width: 320px;
+    height: 420px;
+    top: 50%;
+    left:50%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+
+.input-field {
+    color: var(--icon_color);
+    background-color: inherit;
+    width: 90%;
+    border: none;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.input_container {
+    background-color: var(--input_bg);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.input_container:hover {
+    background-color: var(--input_hover);
+}
+
+.input_container,
+#input_submit {
+    height: 60px;
+    border-radius: 30px;
+    width: 100%;
+}
+
+.input_field:hover,
+.input_field:focus {
+    outline: none;
+}
+
+#input_submit {
+    background-color: var(--submit_bg);
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+
+#input_submit:hover {
+    background-color: var(--submit_hover);
+    transition: background-color,
+        1s;
+    cursor: pointer;
+}
+
+.txt-color{
+    color: var(--default_color);
+}
+
+.links {
+    text-decoration: none;
+    color: var(--submit_bg);
+}
+
+.links:hover {
+    color: var(--submit_hover);
+}
+
 
 
 
