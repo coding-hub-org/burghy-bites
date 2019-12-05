@@ -46,7 +46,7 @@ const HomeSection: React.FC = ()=>{
                 <img src="https://cdn.glitch.com/b5ba0063-d756-434a-ab2a-75f1e7cf69bb%2F2.jpg?v=1575423852289"
                   className="images"></img>
                 <h3>
-                  SubWay
+                  Downer
                 </h3>
               </div>
 
