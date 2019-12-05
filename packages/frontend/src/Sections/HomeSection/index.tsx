@@ -45,4 +45,31 @@ const HomeSection: React.FC = ()=>{
     )
 }
 
+const HomeSection: React.FC = () => {
+  const [isLoading, loaded] = useState(true);
+  const [listOfVenues, setVenues] = useState([]);
+  let loader = useContext(LoaderContext);
+  useEffect(() => {
+    const getVenues = async () => {
+      let venuesToGet = await loader.loadVenues();
+      loaded(false);
+      console.log(venuesToGet);
+      setVenues(prev => {
+        return venuesToGet ? venuesToGet : prev;
+      });
+    };
+    if (!isLoading) return;
+    getVenues();
+  }, [loader, isLoading]);
+  return (
+    <div className="home">
+      <div className="venues-wrapper">
+        {listOfVenues.map(venue => {
+          return VenueBox(venue);
+        })}
+      </div>
+    </div>
+  );
+};
+
 export default HomeSection;
