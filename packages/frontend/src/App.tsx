@@ -15,7 +15,6 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar/>
         <Switch>
           <Route exact path="/" component={HomeSection}/>
           <Route path="/login" component={LoginSection}/>

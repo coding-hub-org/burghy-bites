@@ -3,10 +3,12 @@ import './index.scss';
 import LoaderContext from '../../Context/Loader';
 import Venue from '../../Context/Models/venue';
 import MapComponent from './map';
+import {Link} from 'react-router-dom';
+import Navbar from '../Header';
 const VenueBox = (venue:Venue) =>{
     return(
         <div>
-            <h1>{venue.name}</h1>
+            <Link to={`/venues/${venue.name}`}><h1>{venue.name}</h1></Link>
             <p>{venue.hours}</p>
             {venue.description}
             Put you code here
@@ -33,6 +35,7 @@ const HomeSection: React.FC = ()=>{
     },[loader,isLoading]);
     return(
         <div className="home">
+            <Navbar/>
             <div className="map-wrapper">
                 <MapComponent/>
             </div>
