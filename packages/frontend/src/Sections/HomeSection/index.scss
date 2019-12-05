@@ -1,10 +1,11 @@
 .home{
-    background-image: url("../../Asset/breakfast.jpg");
+    background-image: url("../../Asset/RiteBites2.png");
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: 100%;
     min-height: 100vh;
     min-width: 100vw;
+    height: 1400px;
 }
 
 
@@ -15,38 +16,42 @@ h1 {
   color: #ffffff;
   text-align: center;
 }
+h3 {
+  background-color: inherit;
+  color: #162315;
+  padding-left: 10px;
+  text-align: left;
+}
 
-.places {
-  background-color: white;
-  max-width: 80%;
+div a:hover {
+  background-color: inherit;
+  color:inherit;
+}
+
+.gallerybox {
+  margin-top: 50px;
+  margin-right: 10%;
   margin-left: 10%;
-  padding-left: 5%;
-  padding-right: 5%;
+  height: 500px;
+  border-radius: 15px;
+
 }
 
-.box {
-  background-color: black;
-  color: inherit;
-  display: inline-block;
-  width: 30%;
-  max-width: 400px;
-  min-width: 250px;
-  height: 300px;
-  padding-top: 10px;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  border:2px;
-  border-radius: 20px;
+.images {
+  width: 400px;
+  height: 150px;
+  object-fit: cover;
+
 }
 
-#subway{
-  background-size: 200%;
-}
-
-diva:hover {
-  background-color: yellow;
-
-  color: inherit;
+.boxlet {
+  height: 200px;
+  min-width: 300px;
+  max-width: 1000px;
+  margin: 10px;
+  float: left;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 footer {
@@ -54,13 +59,4 @@ footer {
   margin-left: 10%;
   margin-right: 10%;
   color: white;
-}
-
-#boxlet {
-  height: 500px;
-  background-color: black;
-  color: inherit;
-  margin: 25px;
-  margin-left: 10%;
-  width: 80%;
 }

@@ -1,11 +1,18 @@
-a {
-    text-decoration: none;
-    color: black;
-    font-size: 15pt;
-    margin:0 30px;
+.navbar {
+  background-color: black;
+  height: 60px;
 }
 
-a:hover {
+.navbar a {
+    text-decoration: none;
+    color: #B7D885;
+    font-size: 15pt;
+    padding: 10px;
+    float: right;
+    text-align: center;
+}
+
+.navbar a:hover {
     color: grey;
 }
 
@@ -16,8 +23,57 @@ div{
     color: blue;
     &-img{
         position: relative;
-        max-height: 30px;
+        max-height: 40px;
         margin-right: 120px;
+        padding: 10px;
         float: left;
     }
+}
+
+/* dropdown */
+
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  color: #B7D885;
+  background-color: inherit;
+  font-family: inherit;
+  display: block;
+  padding: 10px;
+  /*padding: 10px 15px;*/
+  height: 40px;
+  font-size: 20px;
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #B7D885;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: #162315;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #162315;
+  color: #B7D885;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }

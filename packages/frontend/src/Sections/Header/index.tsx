@@ -26,14 +26,24 @@ const Navbar: React.FC = ()=>{
     },[authenticator]);
 
     return(
-        <div>
-            <NavLink to="/">Home</NavLink>
+        <div className="navbar">
+            <NavLink to="/" >Home</NavLink>
             {(status)?<Logout/>:<>
             <NavLink to="/login"> Login</NavLink>
             <NavLink to="/register"> Sign Up</NavLink>
             </>
             }
-            <span id="logo"><img src={BBlogo} className="logo-img" alt="logo"/></span>
+            <span id="logo" ><img src={BBlogo} className="logo-img" alt="logo" /></span>
+            <div className="dropdown">
+              <button className="dropbtn">List
+                <i className="fa fa-caret-down"></i>
+              </button>
+              <div className="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+          </div>
         </div>
     )
 
