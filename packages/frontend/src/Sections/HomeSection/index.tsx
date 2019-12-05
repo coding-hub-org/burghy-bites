@@ -7,13 +7,19 @@ import {Link} from 'react-router-dom';
 import Navbar from '../Header';
 const VenueBox = (venue:Venue) =>{
     return(
-        <div>
-            <Link to={`/venues/${venue.name}`}><h1>{venue.name}</h1></Link>
-            <p>{venue.hours}</p>
-            {venue.description}
-            Put you code here
+        <Link to={`/venues/${venue.name}`}>
+            <div className="boxlet">
+              <img
+                src={venue.imgURL}
+                className="images"
+                alt={`image of ${venue.name}`}
+              />
+              <h3>
+                {venue.name}
+              </h3>
+            </div>
+        </Link>
 
-        </div>
     );
 };
 
@@ -39,13 +45,18 @@ const HomeSection: React.FC = ()=>{
             <div className="map-wrapper">
                 <MapComponent/>
             </div>
-            <div className="venues-wrapper">
+      
+            <div className="gallerybox">
                 {listOfVenues.map(venue=>{
                     return VenueBox(venue);
                 })}
+              
             </div>
-            <div className="gallerybox">
-              <div className="boxlet">
+            <footer className="footer"></footer>
+        </div>
+    )
+}
+{/*<div className="boxlet">
                 <img src="https://cdn.glitch.com/b5ba0063-d756-434a-ab2a-75f1e7cf69bb%2F2.jpg?v=1575423852289"
                   className="images"></img>
                 <h3>
@@ -80,11 +91,5 @@ const HomeSection: React.FC = ()=>{
                   Griddles
                 </h3>
               </div>
-
-            </div>
-            <footer className="footer"></footer>
-        </div>
-    )
-}
-
+*/}
 export default HomeSection;
