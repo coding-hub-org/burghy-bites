@@ -5,7 +5,7 @@ import LoaderContext from "../../Context/Loader";
 import Dish from "../../Context/Models/dish";
 import Review from "../../Context/Models/review";
 import authenticationContext from '../../Context/Authenticator';
-
+import Navbar from '../Header';
 const DishSection: React.FC = () => {
   let { dish, venue } = useParams();
   const iniDish: Dish = {
@@ -68,6 +68,7 @@ const DishSection: React.FC = () => {
   }, [isLoading, dish, loader, venue, iniDish]); //trigger when component did mount
   return (
     <div>
+      <Navbar/>
       <div className="header">
         <h1 className="blockBlack">{venue} </h1>
       </div>

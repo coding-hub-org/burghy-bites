@@ -4,6 +4,7 @@ import LoaderContext from '../../Context/Loader';
 import Venue from '../../Context/Models/venue';
 import Dish from '../../Context/Models/venue';
 import './index.scss';
+import Navbar from '../Header';
 const VenueSection: React.FC = () =>{
     let {name}=useParams();
     const iniVenue: Venue = {
@@ -42,6 +43,7 @@ const VenueSection: React.FC = () =>{
     },[iniVenue,loader,name,isLoading]);
     return (
         <div className="venues-section">
+            <Navbar/>
             <h1 className={name}>{name}</h1>
             <div className="description">
                 <div>

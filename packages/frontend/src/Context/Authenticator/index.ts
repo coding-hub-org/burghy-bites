@@ -10,9 +10,11 @@ let iniUser:User={
 class Auth{
     user: User;
     token: Cookie;
+    ifLog: boolean;
     constructor(){
         this.user = iniUser;
         this.token=new Cookie();    
+        this.ifLog=false;
     };
     async doSignUp(data:Object|undefined){
         try{
@@ -34,6 +36,16 @@ class Auth{
         try{
             let response = await doPatch('/login',data);
             if (response.status!==404){
+                let responseData= await response.json();
+                if (responseData.confirmation===false) return false;
+                this.user={
+                    firstName:responseData.data.firstName,
+                    lastName:responseData.data.lastName,
+                    email:responseData.data.email
+                };
+                this.ifLog=true;
+                console.log("TRUE");    
+                console.log(this.ifLog);
                 return true;
             }
             return false;
@@ -47,21 +59,17 @@ class Auth{
     }
     async logOut(){
         //doPatch
-        try{
-            let response = await doPatch('/logout',{},{"Authorization":` Token ${this.token.get('token')}`});
-            if (response.status!==404){
-                return true;
-            }
-            return false;
-        }catch(error){
-            console.log(error);
-            return false;
-        }finally{
-        }
+        this.user=iniUser;
+        this.ifLog=false;
+        return true;
     }
     async doComment(data: Object|undefined){
+        let newdata={
+            ...data,
+            author: this.user.firstName+" "+this.user.lastName,
+        }
         try{
-            let response = await doPost('/comments',data,{"Authorization":` Token ${this.token.get('token')}`});
+            let response = await doPost('/comments',newdata,{"Authorization":` Token ${this.token.get('token')}`});
             if (response.status!==404){
                 return true;
             }
@@ -74,18 +82,7 @@ class Auth{
         }
     }
     async doCheck(){
-        try{
-            let response = await doGet('/login',{"Authorization":` Token ${this.token.get('token')}`});
-            if (response.status!==404){
-                return true;
-            }
-            return false;
-        }catch(error){
-            console.log(error);
-            return false;
-        }finally{
-
-        };
+        return this.ifLog;
         
     }
 

@@ -2,6 +2,7 @@ import React,{useState, useContext} from 'react';
 import './index.scss';
 import {Redirect} from 'react-router-dom';
 import authenticationContext from '../../Context/Authenticator';
+import { preventDefault } from 'ol/events/Event';
 
 const LoginSection:React.FC = () =>{
     let authenticator = useContext(authenticationContext);
@@ -42,7 +43,7 @@ const LoginSection:React.FC = () =>{
             </div>
             <br></br>
             <div>
-                <button onClick={(e)=>{handleClick();}} id='input_submit' className="input_submit">Login</button>
+                <button onClick={(e)=>{e.preventDefault();handleClick();}} id='input_submit' className="input_submit">Login</button>
             </div>
             <br></br>
             <div>

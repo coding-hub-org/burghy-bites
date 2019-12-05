@@ -15,6 +15,9 @@ export const UsersSchema = new Schema({
   },
   hashedPass:{
     type: String,
+  },
+  token:{
+    type: String,
   }
   // imageUrl: {
   //     type: String,
