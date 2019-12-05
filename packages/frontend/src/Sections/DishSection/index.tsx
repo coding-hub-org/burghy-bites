@@ -13,16 +13,18 @@ const DishSection: React.FC = () => {
     calories: 0,
     isHealthy: false,
     recipe: [""],
-    imgURL:""
+    imgURL: ""
   };
-  const commentBox = (review : Review)=>{
-    return(
+  const commentBox = (review: Review) => {
+    return (
       <div>
-        <h4>{review.author+"   >> STAR:  "}  <span>{review.score}</span></h4>
+        <h4>
+          {review.author + "   >> STAR:  "} <span>{review.score}</span>
+        </h4>
         {review.content}
       </div>
-    )
-  }
+    );
+  };
   let loader = useContext(LoaderContext);
   let authenticator = useContext(authenticationContext);
   const [comment, setComment] =useState("");
@@ -49,20 +51,21 @@ const DishSection: React.FC = () => {
   },[authenticator])
   useEffect(() => {
     const getDish = async () => {
-      let dishToGet = await loader.loadDish(dish,venue);
-      let commentToGet = await loader.loadComments(dish,venue);
+      let dishToGet = await loader.loadDish(dish, venue);
+      let commentToGet = await loader.loadComments(dish, venue);
       console.log(dishToGet);
       loaded(false);
       setDish(prev => {
         return dishToGet ? dishToGet : iniDish;
       });
-      setComments(prev=>{
-        return commentToGet? commentToGet : prev
+      setComments(prev => {
+        return commentToGet ? commentToGet : prev;
+
       });
     };
     if (!isLoading) return;
     getDish();
-  }, [isLoading, dish, loader,venue,iniDish]); //trigger when component did mount
+  }, [isLoading, dish, loader, venue, iniDish]); //trigger when component did mount
   return (
     <div>
       <div className="header">
@@ -116,6 +119,7 @@ const DishSection: React.FC = () => {
             name="Comment"
             className="commentBox"
             placeholder="Tell us! Does it taste good?"
+
             value={comment}
           />
         </div>
@@ -129,6 +133,7 @@ const DishSection: React.FC = () => {
           })}
         </div>
         </div>
+
     </div>
 
   );

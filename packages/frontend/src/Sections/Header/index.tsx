@@ -36,5 +36,6 @@ const Navbar: React.FC = ()=>{
             <span id="logo" ><img src={BBlogo} className="logo-img" alt="logo" /></span>
         </div>
     )
+
 };
 export default Navbar;

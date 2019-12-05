@@ -16,10 +16,10 @@ export const DishesSchema = new Schema({
   },
   recipe: [String],
   venue: {
-    type:String
+    type: String
   },
   imgUrl: {
-    type:String
+    type: String
   }
 });
 
